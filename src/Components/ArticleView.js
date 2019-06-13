@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import MarkdownRenderer from 'react-markdown-renderer'
+// import MarkdownRenderer from 'react-markdown-renderer'
+import ReactMarkdown from 'react-markdown/with-html'
 import {SocialIcon, getDateInFormat, Dot, getBlogWithName, baseAddress} from '../helpers'
 import './ArticleView.css'
 import profile from '../assets/profile.jpg'
@@ -23,8 +24,6 @@ export default class ArticleView extends React.Component {
 
     componentDidMount(){
         this.fetch(this.props.match.params.id)
-        // let item = 
-        // this.setState({"articleItem": item})
     }
 
     render(){
@@ -60,7 +59,7 @@ export default class ArticleView extends React.Component {
                     <div className="row pt-4 pb-4">
                         <div className="col-0 col-md-1"></div>
                         <div className="col-12 col-md-10 article-view-text">
-                            <MarkdownRenderer markdown={articleItem.text} />
+                            <ReactMarkdown source={articleItem.text} escapeHtml={false}/>
                         </div>
                         <div className="col-0 col-md-1"></div>
                     </div>
