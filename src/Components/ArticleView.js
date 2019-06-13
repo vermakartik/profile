@@ -1,4 +1,6 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+import MarkdownRenderer from 'react-markdown-renderer'
 import {SocialIcon, getDateInFormat, Dot, getBlogWithName, baseAddress} from '../helpers'
 import './ArticleView.css'
 import profile from '../assets/profile.jpg'
@@ -57,7 +59,9 @@ export default class ArticleView extends React.Component {
                 <div className="container">
                     <div className="row pt-4 pb-4">
                         <div className="col-0 col-md-1"></div>
-                        <div className="col-12 col-md-10 article-view-text">{articleItem.text}</div>
+                        <div className="col-12 col-md-10 article-view-text">
+                            <MarkdownRenderer markdown={articleItem.text} />
+                        </div>
                         <div className="col-0 col-md-1"></div>
                     </div>
                 </div>

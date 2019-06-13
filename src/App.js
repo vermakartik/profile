@@ -22,7 +22,10 @@ let PublicComponent = () => {
       <Route path="/about" component={About} />
       <Redirect from="/" to="/posts" />
       <div className="container-fluid text-center">
-        <div className="pt-5 pb-3" style={{fontFamily: '"consolas", "roboto-mono"'}}>
+        <div className="pt-4 pb-3" style={{fontFamily: '"consolas", "roboto-mono"'}}>
+          <div>
+            Inspired from <a href="https://ines.io">ines.io</a>
+          </div>
           &copy; 2019 KARTIK VERMA . <Link to="/about" style={{color: 'black'}}>About</Link> . <Link to="/posts" style={{color: 'black'}}>Posts</Link>
           <div>
             <ul style={{listStyleType: 'none', clear:'both', display: 'inline-block'}}>
