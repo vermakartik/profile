@@ -1,0 +1,48 @@
+.article-view-title{
+    font-family: 'Fresca', cursive;
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.0em;
+}
+
+.article-item-details{
+    font-family: "Fresca", cursive;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.article-tag{
+    background-color: black;
+    border-radius: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 18px;
+    font-weight: 100;   
+}
+
+.article-view-text{
+    font-size: 20px;
+    font-family: 'ubuntu', sans-serif;
+}
+
+@media only screen and (max-width : 992px) {
+    .article-view-title{
+        font-size: 48px;
+    }
+
+    .article-item-details {
+        font-size: 16px;
+    }
+
+    .article-tag{
+        font-size: 16px;
+    }
+
+    .article-view-text{
+        font-size: 20px;
+    }
+}

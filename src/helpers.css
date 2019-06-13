@@ -1,0 +1,9 @@
+.social-link{
+    color: black;
+    font-size: 24px;
+    transition: color 0.14s ease-in-out;
+}
+
+.social-link:hover{
+    color: gray;
+}
