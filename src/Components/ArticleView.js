@@ -2,21 +2,25 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 // import MarkdownRenderer from 'react-markdown-renderer'
 import ReactMarkdown from 'react-markdown/with-html'
-import {SocialIcon, getDateInFormat, Dot, getBlogWithName, baseAddress} from '../helpers'
+import {SocialIcon, getDateInFormat, Dot, getBlogWithName, baseAddress, Loader} from '../helpers'
 import './ArticleView.css'
+import {Animated} from 'react-animated-css'
 import profile from '../assets/profile.jpg'
 import axios from 'axios'
 
 export default class ArticleView extends React.Component {
     state={
+        isLoading: false,
         articleItem: {}
     }
 
     fetch = async ( name ) => {
+        this.setState({isLoading: true})
         console.log(name)
         let articleItem = await axios.get(baseAddress + "/posts/" + name)
         console.log(articleItem.data.data)
         this.setState({
+            isLoading: false,
             'articleItem': articleItem.data.data
         })
         console.log(this.state.articleItem)
@@ -32,6 +36,8 @@ export default class ArticleView extends React.Component {
         let {articleItem} = this.state
         console.log(articleItem['id'])
         return (
+            (this.state.isLoading === true) ?
+            <Loader /> :
             <div className="container-fluid">
                 <div className="row pt-5 pb-4 pt-md-5 pb-md-4 article-item-details" style={{backgroundColor: `${articleItem.backColor}`, color:'white'}}>
                     <div className="container">

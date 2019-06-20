@@ -1,10 +1,11 @@
 import React from 'react'
 import ArticleLink from './ArticleLink'
-import {blogList} from '../helpers'
+import {blogList, Loader} from '../helpers'
 import ArticleView from "./ArticleView"
 import {getAsLink, baseAddress} from '../helpers'
 import {Switch, Route, Link} from 'react-router-dom'
 import axios from 'axios'
+// import './ArticleList.css'
 
 let ArticleItem = ({articleURL, item}) => {
     // console.log(articleURL)
@@ -31,12 +32,15 @@ let FullArticleList = ({blogList, url}) => {
 export default class ArticleList extends React.Component {
 
     state = {
+        isLoading: false,
         blogList: []
     }   
 
     fetch = async () => {
+        this.setState({isLoading: true})
         let articleList = await axios.get(baseAddress + "/posts")
         console.log(articleList)
+        this.setState({isLoading: false})
         this.setState({blogList: articleList.data.hits})
     }
 
@@ -48,10 +52,12 @@ export default class ArticleList extends React.Component {
         let {match} = this.props
         console.log(match)
         return (
+            (this.state.isLoading === false) ? 
             <div>
                 <Route exact path={match.url} component={() => <FullArticleList blogList={this.state.blogList} url={match.url}/>}/>
                 <Route path={match.url + "/:id"} component={ArticleView}/>
-            </div>
+            </div> :
+            <Loader />
         )
     }
 }

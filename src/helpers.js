@@ -79,3 +79,16 @@ export let getAuthDetails = () => {
     return user
     
 }
+
+
+export let Loader = () => <div className="container pb-3">
+    <div className="c-loader text-center mt-5 mb-2">
+        <span style={{marginRight: '24px', top: "4px", position: "relative", fontFamily: "'Fresca', sans-serif", textTransform: "uppercase", letterSpacing: '2px'}}>
+            Loading...
+        </span>
+        <span>
+            <div className="c-loader-item"></div>
+            <div className="c-loader-item"></div>
+        </span>
+    </div>
+</div>

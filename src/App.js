@@ -27,7 +27,7 @@ let PublicComponent = () => {
             Inspired from <a href="https://ines.io">ines.io</a>
           </div>
           &copy; 2019 KARTIK VERMA . <Link to="/about" style={{color: 'black'}}>About</Link> . <Link to="/posts" style={{color: 'black'}}>Posts</Link>
-          <div>
+          <div className="pt-4">
             <ul style={{listStyleType: 'none', clear:'both', display: 'inline-block'}}>
                 <li style={{display: 'inline', float: 'left'}}><SocialIcon icon="fab fa-github" link="https://github.com/vermakartik"/></li>
                 <li style={{float: 'left'}}><SocialIcon icon="fab fa-codepen" link="https://codepen.io/simClev/"/></li>
