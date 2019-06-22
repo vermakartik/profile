@@ -4,6 +4,8 @@ import {Link, withRouter} from 'react-router-dom'
 import Logout from './Auth'
 import {baseAddress, getAuthDetails} from '../helpers'
 import axios from 'axios'
+import ReactMarkdown from 'react-markdown'
+import CodeBlock from '../Codeblock'
 
 export default withRouter(class EditArticle extends React.Component {
 
@@ -88,9 +90,18 @@ export default withRouter(class EditArticle extends React.Component {
                                 <label className="font-weight-bold">Post Type</label>
                                 <input className="form-control" type="text" name="type" value={this.state.type} onChange={this.onChange}/>
                             </div>
-                            <div className="form-group">
-                                <label className="font-weight-bold">Post Text</label>
-                                <textarea className="form-control" type="text" name="text" value={this.state.text} onChange={this.onChange} rows='20' cols="50"/>
+                            <div className="row">
+                                <div className="form-group col-md-6 col-12">
+                                    <label className="font-weight-bold">Post Text</label>
+                                    <textarea className="form-control" type="text" name="text" value={this.state.text} onChange={this.onChange} rows='20' cols="50"/>
+                                </div>
+                                <div className="border rounded col-md-6 col-12">
+                                    <div className="p-0 m-0" style={{maxHeight: '34em', overflow:'scroll', wordBreak: 'break-word'}}>
+                                        <ReactMarkdown 
+                                        source={this.state.text}
+                                        renderers={{code: CodeBlock}} />
+                                    </div>
+                                </div>
                             </div>
                             <div className="form-group">
                                 <label className="font-weight-bold">Background color</label>

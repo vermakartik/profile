@@ -7,6 +7,7 @@ import './ArticleView.css'
 import {Animated} from 'react-animated-css'
 import profile from '../assets/profile.jpg'
 import axios from 'axios'
+import CodeBlock from '../Codeblock'
 
 export default class ArticleView extends React.Component {
     state={
@@ -65,7 +66,13 @@ export default class ArticleView extends React.Component {
                     <div className="row pt-4 pb-4">
                         <div className="col-0 col-md-1"></div>
                         <div className="col-12 col-md-10 article-view-text">
-                            <ReactMarkdown source={articleItem.text} escapeHtml={false}/>
+
+                            {/* react markdown */}
+                            <ReactMarkdown 
+                                source={articleItem.text} 
+                                renderers={{code: CodeBlock}}/>
+                            {/* --------------------- */}
+
                         </div>
                         <div className="col-0 col-md-1"></div>
                     </div>
