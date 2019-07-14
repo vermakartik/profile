@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap');
+
 .article-view-title{
     font-family: 'Fresca', cursive;
     font-size: 64px;
@@ -25,8 +27,8 @@
 }
 
 .article-view-text{
-    font-size: 16px;
-    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.4em;
+    font-family: 'Zilla Slab', Arial, Helvetica, sans-serif;
 }
 
 @media only screen and (max-width : 992px) {
