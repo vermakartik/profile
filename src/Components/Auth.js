@@ -7,7 +7,6 @@ export class Login extends React.Component {
         password: ""
     }
     handleChange = (e) => {
-        console.log(e.target.name + "<--->" + e.target.value)
         this.setState({[e.target.name]: e.target.value})
     }
     render() {
@@ -54,8 +53,6 @@ class Logout extends React.Component {
 
 export class AuthCheck extends React.Component {
     render() {
-        console.log("Auth Check called ....")
-        console.log(this.props.isLoggedIn)
         
         var toRender = (
             this.props.isLoggedIn ? this.props.children : <Login loginHandle={this.props.loginHandle} />

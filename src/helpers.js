@@ -2,6 +2,7 @@ import React from 'react'
 import './helpers.css'
 
 export let baseAddress = 'https://tranquil-mountain-69690.herokuapp.com'
+// export let baseAddress = 'http://localhost:3000'
 
 let randomInt = (a, b) => {
     return Math.floor(Math.random() * (b - a + 1) + a)

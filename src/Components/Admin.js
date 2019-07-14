@@ -4,8 +4,9 @@ import NewArticle from './NewArticle'
 import EditArticle from './EditArticle'
 import Logout, {Login, AuthCheck} from './Auth'
 import './Admin.css'
-import {blogList, getDateInFormat, baseAddress} from '../helpers'
+import {blogList, getDateInFormat, baseAddress, getAuthDetails} from '../helpers'
 import Axios from 'axios';
+import { userInfo } from 'os';
 
 let Links = ({match, loginHandle}) => <div className="links-position">
                     <Link to={match.url + "/new"}><button className="new-button shadow-sm ml-1 mr-1"><i className="fas fa-plus"></i> <span className="pl-1" style={{fontWeight: 'bold'}}>NEW</span></button></Link> 
@@ -27,7 +28,25 @@ class AdminHome extends React.Component {
 
     componentDidMount(){
         this.fetch()
-        console.log("Called Component Mount for admin...........")
+    }
+
+    handleDelete = (index) => {
+        let userDetails = getAuthDetails()
+        let userInfo;
+        if(userDetails){
+            userInfo = {
+                "_id": this.state.articleList[index]._id,
+                "user": userDetails
+            }
+        } else {
+            userInfo = {
+                "_id": this.state.articleList[index]._id
+            }
+        }
+        Axios.post(baseAddress + "/posts/delete", userInfo).then(response => {
+            console.log(response)
+            this.fetch()
+        })
     }
 
     render(){
@@ -45,12 +64,22 @@ class AdminHome extends React.Component {
                          this.state.articleList.map(
                             (item, index) => {
                                 return (
-                                    <div className="col-md-6 col-12">
-                                        <Link to={match.url + "/edit/" + item.title.split(" ").join("-")}><div className="m-3 border rounded-lg p-3 text-dark">
-                                            <span className="font-weight-bold">Title: </span>{item.title} <br />
-                                            <span className="font-weight-bold">Date: </span>{getDateInFormat(item.publishDate)}
+                                    <div className="col-md-4 col-12 mt-3 mb-3">
+                                        <div className="row m-1 border rounded-lg text-dark">
+                                            <div className="col-10 pt-2 pb-2">
+                                                <Link to={match.url + "/edit/" + item.title.split(" ").join("-")}>
+                                                    <div className="text-dark">
+                                                        <span className="font-weight-bold">Title: </span>{item.title} <br />
+                                                        <span className="font-weight-bold">Date: </span>{getDateInFormat(item.publishDate)}
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <div className="col-2">
+                                                <span className="text-middle">
+                                                    <button onClick={() => this.handleDelete(index)} className="delete-article-button"><i className="far fa-trash-alt"></i></button>
+                                                </span>
+                                            </div>
                                         </div>
-                                        </Link>
                                     </div>
                                 )
                             }

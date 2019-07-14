@@ -28,9 +28,28 @@
 .list-button:hover{
     background-color: #4ebaaa;
 }
+
+.delete-article-button{
+    position: relative;
+    border: none;
+    background: transparent;
+    font-size: 1.4em;
+    outline: none;
+}
+
+.delete-article-button:hover {
+    color: #d81b60;
+}
+
 @media only screen and (max-width: 992px){
     .new-button{
         bottom: 12px;
         right: 12px;
     }
+
+    .delete-article-button{
+        font-size: 1.6em;
+        left: -12px;
+    }
+ 
 }
