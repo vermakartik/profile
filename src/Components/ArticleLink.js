@@ -10,7 +10,7 @@ export default class ArticleLink extends React.Component {
     render(){
         console.log(this.props.article.backColor)
         return (
-            <div className="row pt-md-5 pb-md-5 pt-4 pb-4" style={{backgroundColor: `${this.props.article.backColor}`}}>
+            <div className="row pt-5 pb-5 pt-4 pb-4" style={{backgroundColor: `${this.props.article.backColor}`}}>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-3 col-0"></div>

@@ -40,7 +40,7 @@ export default class ArticleView extends React.Component {
             (this.state.isLoading === true) ?
             <Loader /> :
             <div className="container-fluid">
-                <div className="row pt-5 pb-4 pt-md-5 pb-md-4 article-item-details" style={{backgroundColor: `${articleItem.backColor}`, color:'white'}}>
+                <div className="row pt-5 pb-5 article-item-details" style={{backgroundColor: `${articleItem.backColor}`, color:'white'}}>
                     <div className="container">
                         <div className='row'>
                             <div className="col-md-1 col-0"></div>
