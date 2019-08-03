@@ -35,10 +35,20 @@
     background: transparent;
     font-size: 1.4em;
     outline: none;
-}
+}   
 
 .delete-article-button:hover {
-    color: #d81b60;
+    color: #a65d37;
+}
+
+.article-item{
+    background: #f08f5b;
+    border-radius: 12px;
+    transition: 0.24s transform ease-in-out; 
+}
+
+.article-item:hover{
+    transform: scale(1.05, 1.1);
 }
 
 @media only screen and (max-width: 992px){
@@ -49,7 +59,7 @@
 
     .delete-article-button{
         font-size: 1.6em;
-        left: -12px;
+        /* left: -12px; */
     }
  
 }

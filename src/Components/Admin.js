@@ -55,37 +55,34 @@ class AdminHome extends React.Component {
         console.log(articleList)
         return (
         <div className="container-fluid">
-            <div className="container">
-                <div className='row bg-light'>
-                    <div style={{fontFamily: '"Fredoka One", "sans-serif"', fontSize: "24px"}} className="pl-md-4 pt-md-5 pl-2 pt-3">Article List</div>
-                </div>
-                <div className="row">
-                    {
-                         this.state.articleList.map(
-                            (item, index) => {
-                                return (
-                                    <div className="col-md-4 col-12 mt-3 mb-3">
-                                        <div className="row m-1 border rounded-lg text-dark">
-                                            <div className="col-10 pt-2 pb-2">
-                                                <Link to={match.url + "/edit/" + item.title.split(" ").join("-")}>
-                                                    <div className="text-dark">
-                                                        <span className="font-weight-bold">Title: </span>{item.title} <br />
-                                                        <span className="font-weight-bold">Date: </span>{getDateInFormat(item.publishDate)}
-                                                    </div>
-                                                </Link>
+            <div className='row bg-light'>
+                <div style={{position: 'relative', color: 'white', letterSpacing: "1px", background: "#5ba386", fontFamily: 'Ubuntu, "serif"', fontSize: "24px", fontWeight: 'bold', padding: "16px 8px 16px 16px", left: '8px', width: 'calc(100% - 16px)', borderRadius: "0px 0px 12px 12px"}}>Article List</div>
+            </div>
+            <div className="row">
+                {
+                    this.state.articleList.map(
+                    (item, index) => {
+                        return (
+                            <div className="col-md-4 col-lg-3 col-12">
+                                <div className="row m-1 text-dark article-item">
+                                    <div className="col-9">
+                                        <Link to={match.url + "/edit/" + item.title.split(" ").join("-")} style={{textDecoration: 'none'}}>
+                                            <div className="text-light pt-3 pb-3" style={{fontFamily: '"Ubuntu", sans-serif', fontSize: '18px'}}>
+                                                <span className="font-weight-bold">Title: </span>{item.title} <br />
+                                                <span className="font-weight-bold">Date: </span>{getDateInFormat(item.publishDate)}
                                             </div>
-                                            <div className="col-2">
-                                                <span className="text-middle">
-                                                    <button onClick={() => this.handleDelete(index)} className="delete-article-button"><i className="far fa-trash-alt"></i></button>
-                                                </span>
-                                            </div>
+                                        </Link>
+                                    </div>
+                                    <div className="col-3">
+                                        <div style={{height: '100%', textAlign: 'right', position: 'relative'}}>
+                                            <button style={{top: '50%', transform: 'translateY(-50%)'}} onClick={() => this.handleDelete(index)} className="delete-article-button"><i className="far fa-trash-alt"></i></button>
                                         </div>
                                     </div>
-                                )
-                            }
+                                </div>
+                            </div>
                         )
-                    }
-                </div>
+                    })
+                }
             </div>
             <Links {...this.props}/>
         </div>
@@ -99,7 +96,7 @@ export default class Admin extends React.Component {
         console.log(isLoggedIn)
         console.log(match)
         return(
-            <div className="container-fluid">
+            <div>
                 <AuthCheck loginHandle={this.props.loginHandle} isLoggedIn={isLoggedIn}>
                         <Route path={match.url} exact component={() => <AdminHome match={match} loginHandle={this.props.loginHandle}/>}/>
                         <Route path={match.url + "/new"} component={(props) => <NewArticle loginHandle={this.props.loginHandle}/>} {...this.props}/>
