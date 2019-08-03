@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, Redirect, Link, Route, Switch} from 'react-router-dom'
+import {HashRouter as Router, Redirect, Link, Route, Switch} from 'react-router-dom'
 import ArticleList from './Components/ArticleList'
 import { SocialIcon, baseAddress } from './helpers';
 import About from './Components/About'
 import Admin from './Components/Admin'
 import navImage from './assets/Kartik.jpg'
 import axios from 'axios';
-
-import history from './history'
 
 let PublicComponent = () => {
   
@@ -76,7 +74,7 @@ class App extends React.Component {
 
   render(){
     return (
-      <Router history={history}>
+      <Router>
         <Switch>
           <Route path="/admin" component={(props) => <Admin loginHandle={this.onChangeLogin} isLoggedIn={this.state.isLoggedIn} {...props}/>} />
           <Route path="/" component={PublicComponent}/>
