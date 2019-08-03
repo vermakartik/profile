@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import {HashRouter as Router, Redirect, Link, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Redirect, Link, Route, Switch} from 'react-router-dom'
 import ArticleList from './Components/ArticleList'
 import { SocialIcon, baseAddress } from './helpers';
 import About from './Components/About'
 import Admin from './Components/Admin'
 import navImage from './assets/Kartik.jpg'
 import axios from 'axios';
+
+import history from './history'
 
 let PublicComponent = () => {
   
@@ -22,7 +24,7 @@ let PublicComponent = () => {
       <Route path="/about" component={About} />
       <Redirect from="/" to="/posts" />
       <div className="container-fluid text-center">
-        <div className="pt-4 pb-3" style={{fontFamily: '"consolas", "roboto-mono"'}}>
+        <div className="pt-4 pb-3" style={{fontFamily: '"consolas", "Roboto Mono", monospace'}}>
           <div>
             Inspired from <a href="https://ines.io">ines.io</a>
           </div>
@@ -60,13 +62,9 @@ class App extends React.Component {
     } else {
       this.setState({isLoggedIn: false})
     }
-    // localStorage.setItem("isLoggedIn", true)
-    console.log(response)
   }
 
   onChangeLogin = (username, password, value) => {
-    console.log("username" + username)
-    console.log("password" + password)
     if(value === true){
       this.fetch(username, password)
     } else {
@@ -78,7 +76,7 @@ class App extends React.Component {
 
   render(){
     return (
-      <Router>
+      <Router history={history}>
         <Switch>
           <Route path="/admin" component={(props) => <Admin loginHandle={this.onChangeLogin} isLoggedIn={this.state.isLoggedIn} {...props}/>} />
           <Route path="/" component={PublicComponent}/>
@@ -87,34 +85,5 @@ class App extends React.Component {
     );
   }
 }
-
-// let App = () => {
-//   return (
-//     <Router>
-//       <div>
-//         <Route path="/temp" component={Comp1}/>
-//       </div>
-//     </Router>
-//   )
-// }
-
-// let Comp1 = ({match}) => {
-//   return (
-//       <div>
-//         <Link to={match.url + "/1"}>One</Link>
-//         <Link to={match.url + "/2"}>Two</Link>
-//         <Link to={match.url + "/3"}>Three</Link>
-//         <Route path={match.url + "/:value"} component={Comp2}/>
-//       </div>
-//   )
-// }
-
-// let Comp2 = ({match}) => {
-//   return (
-//       <div>
-//         Got this is value. + {match.params.value}
-//       </div>
-//   )
-// }
 
 export default App;

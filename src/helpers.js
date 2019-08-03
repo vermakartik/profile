@@ -20,18 +20,6 @@ export let getAsLink = (str) => {
     return str.split(' ').join('-')
 }
 
-// export let getBlogWithName = (name) => {
-//     name = name.split('-').join(' ')
-//     for(let i = 0; i < blogList.length; ++i){
-//         let curn = blogList[i]
-//         console.log(curn)
-//         if(name == curn.title){
-//             console.log('matched')
-//             return curn
-//         }
-//     }
-// }
-
 export let Dot = () => {
     return (
         <span className="pl-2 pr-2"><i className="fas fa-circle align-middle" style={{fontSize: '4px'}}></i></span>
