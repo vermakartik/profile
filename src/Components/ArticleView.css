@@ -76,6 +76,10 @@
     overflow: hidden;
 }
 
+.article-text-container pre::-webkit-scrollbar{
+    display: none;
+}
+
 .article-text-container table, .article-text-container th, .article-text-container thead, .article-text-container tr{
     font-family: 'Josefin Sans', sans-serif ;
 }    
