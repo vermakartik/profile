@@ -13,7 +13,7 @@
     --color-sec: #26a69a;
     --background-main: linear-gradient(to right, var(--color-main), var(--color-mid), var(--color-sec));
     --text-background: #FFFFFF;
-    --text-color-normal: #afafaf;
+    --text-color-normal: #323232;
 
     --text-normal: 'Varela Round', 'sans-serif';
     --text-code: 'fantasque sans mono', consolas, 'ubuntu mono', monospace;
@@ -46,48 +46,62 @@
     font-weight: 100;   
 }
 
+.article-text-container {
+    border-radius: 4px;
+}
+
 .article-text-container p{
     line-height: 1.8em;
     font-size: 18px;
+    padding: 0px 8px;
     font-family: var(--text-normal);
 }
 
 .article-text-container h1, .article-text-container  h2, .article-text-container  h3, .article-text-container  h4, .article-text-container h5, .article-text-container h6{
     margin: 32px 0px;
-    /* font-weight: bold; */
     font-family: var(--text-header);
     padding: 2px 8px;
     border-radius: 8px;
+    padding: 0px 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
     color: var(--color-mid);
 }
 
 .article-text-container strong {
-    padding: 2px 6px 0px 6px;
+    padding: 2px 4px 0px 4px;
     font-size: 16px;
-    color: white;
+    color: var(--text-color-normal);
     font-weight: normal;
-    background: var(--background-main);
     border-radius: 4px;
+    position: relative;
+    overflow: hidden;
 }
 
-.article-text-container strong {
-    padding: 2px 6px 0px 6px;
-    font-size: 16px;
-    color: white;
-    opacity: 0.8;
-    font-weight: normal;
-    background: var(--background-main);
+.article-text-container strong::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
     border-radius: 4px;
+    background: var(--background-main);
+    z-index: -1;
+    opacity: 0.4;
 }
 
 .article-text-container ul, ol{
     font-family: var(--text-normal);
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 12px;
+    padding: 0px 8px;
+    word-wrap: break-word;
 }
 
 .article-text-container code{    
     font-family: var(--text-code) !important;
+    font-size: 1.1em;
 }
 
 .article-text-container pre {
@@ -125,6 +139,8 @@
     z-index: 1;
     background: #eaeaea;
     margin-top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .article-text-container table::before {
