@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Noto+Sans+JP|Work+Sans:400,700&display=swap');
+
+:root{ 
+    --color-main: #673ab7;
+    --color-mid: #5c6bc0;
+    --color-sec: #26a69a;
+    --background-main: linear-gradient(to right, var(--color-main), var(--color-mid), var(--color-sec));
+    --text-background: #FFFFFF;   
+}
 
 .article-view-title{
     font-family: 'Fresca', cursive;
@@ -30,6 +39,63 @@
     font-size: 1.4em;
     font-family: 'Zilla Slab', Arial, Helvetica, sans-serif;
 }
+
+.article-text-container p{
+    line-height: 1.8em;
+    font-size: 19px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.article-text-container h1, .article-text-container  h2, .article-text-container  h3, .article-text-container  h4, .article-text-container h5, .article-text-container h6{
+    margin: 32px 0px;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 2px 8px;
+    border-radius: 8px;
+    color: var(--color-main);
+}
+
+.article-text-container ul, ol{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 19px;
+    margin-top: 12px;
+}
+
+
+.article-text-container code{   
+    font-size: 16px; 
+    padding: 0;
+}
+
+.article-text-container pre {
+    border-radius: 12px;
+    margin: 0;
+    background: #5c6bc0; 
+    padding: 0;
+    margin-bottom: 18em;
+}
+
+.article-text-container table, .article-text-container th, .article-text-container thead, .article-text-container tr{
+    font-family: 'Josefin Sans', sans-serif ;
+}    
+
+.article-text-container th, td {
+    padding: 8px;
+    font-size: 18px;
+}
+
+.article-text-container td {
+    padding: 4px 8px;
+    font-size: 18px;
+}
+
+.article-text-container table {
+    border-radius: 1em;
+    border-collapse: collapse;
+    overflow: hidden;
+    background: #efefef;
+}
+
 
 @media only screen and (max-width : 992px) {
     .article-view-title{

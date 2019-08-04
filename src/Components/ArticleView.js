@@ -68,9 +68,11 @@ export default class ArticleView extends React.Component {
                         <div className="col-12 col-md-10 article-view-text">
 
                             {/* react markdown */}
-                            <ReactMarkdown 
-                                source={articleItem.text} 
-                                renderers={{code: CodeBlock}}/>
+                            <div className="article-text-container">
+                                <ReactMarkdown 
+                                    source={articleItem.text} 
+                                    renderers={{code: CodeBlock}}/>
+                            </div>
                             {/* --------------------- */}
 
                         </div>
