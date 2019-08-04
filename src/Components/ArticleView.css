@@ -1,12 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Noto+Sans+JP|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap');
+
+@import url('../assets/Webfonts/FantasqueSansMono-Bold-decl.css');
+@import url('../assets/Webfonts/FantasqueSansMono-BoldItalic-decl.css');
+@import url('../assets/Webfonts/FantasqueSansMono-Italic-decl.css');
+@import url('../assets/Webfonts/FantasqueSansMono-Regular-decl.css');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
 
 :root{ 
     --color-main: #673ab7;
     --color-mid: #5c6bc0;
     --color-sec: #26a69a;
     --background-main: linear-gradient(to right, var(--color-main), var(--color-mid), var(--color-sec));
-    --text-background: #FFFFFF;   
+    --text-background: #FFFFFF;
+    --text-color-normal: #afafaf;
+
+    --text-normal: 'Varela Round', 'sans-serif';
+    --text-code: 'fantasque sans mono', consolas, 'ubuntu mono', monospace;
+    --text-header: 'Varela Round', 'sans-serif';
 }
 
 .article-view-title{
@@ -35,44 +46,52 @@
     font-weight: 100;   
 }
 
-.article-view-text{
-    font-size: 1.4em;
-    font-family: 'Zilla Slab', Arial, Helvetica, sans-serif;
-}
-
 .article-text-container p{
     line-height: 1.8em;
-    font-size: 19px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    font-family: var(--text-normal);
 }
 
 .article-text-container h1, .article-text-container  h2, .article-text-container  h3, .article-text-container  h4, .article-text-container h5, .article-text-container h6{
     margin: 32px 0px;
-    font-weight: bold;
-    font-family: 'Josefin Sans', sans-serif;
+    /* font-weight: bold; */
+    font-family: var(--text-header);
     padding: 2px 8px;
     border-radius: 8px;
-    color: var(--color-main);
+    color: var(--color-mid);
+}
+
+.article-text-container strong {
+    padding: 2px 6px 0px 6px;
+    font-size: 16px;
+    color: white;
+    font-weight: normal;
+    background: var(--background-main);
+    border-radius: 4px;
+}
+
+.article-text-container strong {
+    padding: 2px 6px 0px 6px;
+    font-size: 16px;
+    color: white;
+    opacity: 0.8;
+    font-weight: normal;
+    background: var(--background-main);
+    border-radius: 4px;
 }
 
 .article-text-container ul, ol{
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 19px;
+    font-family: var(--text-normal);
+    font-size: 16px;
     margin-top: 12px;
 }
 
-
-.article-text-container code{   
-    font-size: 16px; 
-    padding: 0;
+.article-text-container code{    
+    font-family: var(--text-code) !important;
 }
 
 .article-text-container pre {
     border-radius: 12px;
-    margin: 0;
-    background: #5c6bc0; 
-    padding: 0;
-    margin-bottom: 18em;
     overflow: hidden;
 }
 
@@ -80,27 +99,45 @@
     display: none;
 }
 
-.article-text-container table, .article-text-container th, .article-text-container thead, .article-text-container tr{
-    font-family: 'Josefin Sans', sans-serif ;
-}    
+.article-text-container th, .article-text-container thead, .article-text-container td{
+    font-family: var(--text-normal);
+}
 
-.article-text-container th, td {
-    padding: 8px;
-    font-size: 18px;
+.article-text-container thead {
+    color: var(--color-mid);
+}
+
+.article-text-container th {
+    padding: 12px 12px 4px 12px;
+    font-size: 16px;
 }
 
 .article-text-container td {
-    padding: 4px 8px;
-    font-size: 18px;
+    padding: 4px 12px;
+    font-size: 16px;
 }
 
 .article-text-container table {
     border-radius: 1em;
     border-collapse: collapse;
     overflow: hidden;
-    background: #efefef;
+    position: relative;
+    z-index: 1;
+    background: #eaeaea;
+    margin-top: 16px;
 }
 
+.article-text-container table::before {
+    content: "";
+    z-index: -1;
+    opacity: 0.2;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: var(--background-main);
+}
 
 @media only screen and (max-width : 992px) {
     .article-view-title{
@@ -113,9 +150,5 @@
 
     .article-tag{
         font-size: 16px;
-    }
-
-    .article-view-text{
-        font-size: 20px;
     }
 }
