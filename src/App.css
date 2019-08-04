@@ -43,10 +43,9 @@
   background-color: #8c5b8d;
   padding: 0px 8px;
   font-family: 'Fresca', cursive;
-  border-radius: 50%;
+  border-radius: 40%;
   transition: left 0.24s ease-in;
   letter-spacing: 1px;
-  font-weight: bold;
 }
 
 .nav_image_container:hover .nav_link{

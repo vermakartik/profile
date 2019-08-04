@@ -86,8 +86,8 @@ export default class ArticleView extends React.Component {
                             <div className="col-0 col-md-10">
                                 <div className='row'>
                                     <div className="col-md-8 col-12">
-                                        <div className="font-weight-bold" style={{fontFamily: '"Fresca", sans-serif', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '18px'}}>About the Author</div>
-                                        <div style={{fontFamily: '"Fresca", sans-serif', fontSize: '18px'}}>
+                                        <div className="font-weight-bold" style={{fontFamily: '"Varela Round", sans-serif', textTransform: 'uppercase', fontSize: '18px'}}>About the Author</div>
+                                        <div style={{fontFamily: '"Varela Round", sans-serif', fontSize: '16px', paddingTop: "12px",paddingBottom: "12px"}}>
                                              I'm a Computer Science & Engineering Graduate from National Institute of Technology, Hamirpur. I have worked in the fields of Deep Learning, Android Development and Web Development. My current interest is front end development.
                                         </div>
                                         <div className="container-fluid pt-3">
