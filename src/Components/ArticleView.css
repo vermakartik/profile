@@ -73,6 +73,7 @@
     background: #5c6bc0; 
     padding: 0;
     margin-bottom: 18em;
+    overflow: hidden;
 }
 
 .article-text-container table, .article-text-container th, .article-text-container thead, .article-text-container tr{
