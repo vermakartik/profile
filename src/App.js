@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {HashRouter as Router, Redirect, Link, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Redirect, Link, Route, Switch} from 'react-router-dom'
 import ArticleList from './Components/ArticleList'
 import { SocialIcon, baseAddress } from './helpers';
 import About from './Components/About'

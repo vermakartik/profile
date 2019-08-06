@@ -14,7 +14,7 @@ export class Login extends React.Component {
             <div className="container">
                 <div className="row mt-md-5 mt-3">
                     <div className="col-0 col-md-4"></div>
-                    <div className="col-12 col-md-4 bg-danger rounded-lg pt-3 pb-3" >
+                    <div className="col-12 col-md-4 rounded-lg pt-3 pb-3" style={{background: '#9b4dcb'}} >
                         <div className="text-center" style={{fontFamily: '"Fredoka One", sans-serif', fontSize: '24px', letterSpacing: '2px', textTransform: 'uppercase', color: "white"}}>Login</div>
                         <form>
                             <div className="form-group">
