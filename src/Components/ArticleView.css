@@ -58,6 +58,16 @@
     font-family: var(--text-normal);
 }
 
+.article-text-container p > img {
+    border-radius: 4px;
+    position: relative;
+    left: 50%;
+    border: 1px solid gray;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    transform: translateX(-50%);
+}
+
 .article-text-container h1, .article-text-container  h2, .article-text-container  h3, .article-text-container  h4, .article-text-container h5, .article-text-container h6{
     margin: 32px 0px;
     font-family: var(--text-header);
@@ -167,5 +177,14 @@
 
     .article-tag{
         font-size: 16px;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .article-text-container p{
+        line-height: 1.6em;
+        font-size: 18px;
+        padding: 0px 8px;
+        font-family: var(--text-normal);
     }
 }
