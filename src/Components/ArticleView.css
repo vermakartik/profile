@@ -52,7 +52,7 @@
 }
 
 .article-text-container p{
-    line-height: 1.8em;
+    /* line-height: 1.8em; */
     font-size: 18px;
     padding: 0px 8px;
     font-family: var(--text-normal);
@@ -69,7 +69,7 @@
 }
 
 .article-text-container h1, .article-text-container  h2, .article-text-container  h3, .article-text-container  h4, .article-text-container h5, .article-text-container h6{
-    margin: 32px 0px;
+    margin: 24px 0px;
     font-family: var(--text-header);
     padding: 2px 8px;
     border-radius: 8px;
@@ -99,7 +99,7 @@
     border-radius: 4px;
     background: var(--background-main);
     z-index: -1;
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 .article-text-container ul, ol{
