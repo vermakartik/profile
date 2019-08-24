@@ -20,7 +20,6 @@ let PublicComponent = () => {
       </div>
       <Route path="/posts" component={ArticleList} /> 
       <Route path="/about" component={About} />
-      <Redirect from="/" to="/posts" />
       <div className="container-fluid text-center">
         <div className="pt-4 pb-3" style={{fontFamily: '"consolas", "Roboto Mono", monospace'}}>
           <div>
