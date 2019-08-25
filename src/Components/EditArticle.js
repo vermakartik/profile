@@ -18,7 +18,8 @@ export default withRouter(class EditArticle extends React.Component {
         type: "",
         author: "",
         backColor: "",
-        publishDate: ""
+        publishDate: "",
+        isPublished: ""
     }
 
     fetch = async ( name ) => {
@@ -32,7 +33,8 @@ export default withRouter(class EditArticle extends React.Component {
             type: articleItem.type,
             author: articleItem.author,
             backColor: articleItem.backColor,
-            publishDate: articleItem.publishDate
+            publishDate: articleItem.publishDate,
+            isPublished: articleItem.isPublished
         })
         console.log(this.state)
     }
@@ -63,13 +65,40 @@ export default withRouter(class EditArticle extends React.Component {
         })
     }
 
+    onPublishToggleClick = async (e, publishState) => {
+        let userDetails = getAuthDetails()
+        let userInfo = {}
+        let stateInfo = this.state
+        stateInfo.isPublished = publishState
+        if(userDetails){
+            userInfo = {
+                ...stateInfo,
+                'user': userDetails
+            }
+        } else {
+            userInfo={
+                ...stateInfo
+            }
+        }
+        axios.post(baseAddress + "/posts/save", userInfo).then(response => {
+            this.props.history.replace('/admin')
+        })
+    }
+
     render() {
         return (
             <div className="container-fluid">
                 <div className="row pb-4">
                     <div className="col-md-1 col-0"></div>
                     <div className="col-12">
-                        <div style={{fontFamily: '"Fredoka One", "sans-serif"', background: "#e8645a", fontSize: "24px", borderRadius: "0px 0px 16px 16px"}} className="pt-2 pl-2 pb-2 mb-3">Edit</div>
+                        <div className="row pt-2 pl-2 pb-2 mb-3" style={{background: "#e8645a", borderRadius: "0px 0px 16px 16px"}}>
+                            <div className="col-6" style={{fontFamily: '"Fredoka One", "sans-serif"', fontSize: "24px"}} >Edit</div>
+                            <div className="col-6 text-right">
+                                {
+                                    this.state.isPublished === false ? <button onClick={e => this.onPublishToggleClick(e, true)} className="btn btn-secondary">Publish</button> : <span><button onClick={e => this.onPublishToggleClick(e, false)} className="btn btn-warning">UnPublish</button></span> 
+                                }
+                            </div>
+                        </div>
                         <form>
                             <div className="row">
                                 <div className="input-container col-12 col-md-6">

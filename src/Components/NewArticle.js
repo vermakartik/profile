@@ -12,7 +12,8 @@ export default withRouter(class EditArticle extends React.Component {
         type: "",
         author: "",
         backColor: "#ffffff",
-        publishDate: Date.now()
+        publishDate: Date.now(),
+        isPublished: false
     }
     
     onChange = (e) => {

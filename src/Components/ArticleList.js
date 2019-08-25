@@ -18,7 +18,7 @@ let FullArticleList = ({blogList, url}) => {
     return (
         <div className="container-fluid">
             {
-                blogList.map((item, index) => {
+                blogList.filter(item => item.isPublished === true).map((item, index) => {
                     let articleText = getAsLink(item.title)
                     let articleURL = `${url}/${articleText}`
                     console.log(articleURL)
