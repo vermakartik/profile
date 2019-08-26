@@ -71,7 +71,8 @@ export default class ArticleView extends React.Component {
                             <div className="article-text-container">
                                 <ReactMarkdown 
                                     source={articleItem.text} 
-                                    renderers={{code: CodeBlock}}/>
+                                    renderers={{code: CodeBlock}}
+                                    escapeHtml={false}/>
                             </div>
                             {/* --------------------- */}
 

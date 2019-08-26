@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap');
 
-@import url('../assets/Webfonts/FantasqueSansMono-Bold-decl.css');
-@import url('../assets/Webfonts/FantasqueSansMono-BoldItalic-decl.css');
-@import url('../assets/Webfonts/FantasqueSansMono-Italic-decl.css');
-@import url('../assets/Webfonts/FantasqueSansMono-Regular-decl.css');
 @import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 :root{ 
     --color-main: #673ab7;
@@ -16,9 +13,9 @@
     --text-background: #FFFFFF;
     --text-color-normal: #323232;
 
-    --text-normal: 'Varela Round', 'sans-serif';
-    --text-code: 'fantasque sans mono', consolas, 'ubuntu mono', monospace;
-    --text-header: 'Varela Round', 'sans-serif';
+    --text-normal: 'Open Sans', 'sans-serif';
+    --text-code: consolas, 'ubuntu mono', monospace;
+    --text-header: 'Open Sans', 'sans-serif';
 }
 
 .article-view-title{
@@ -53,13 +50,13 @@
 
 .article-text-container p{
     /* line-height: 1.8em; */
-    font-size: 18px;
+    font-size: 15px;
     padding: 0px 8px;
     font-family: var(--text-normal);
 }
 
 .article-text-container p > img {
-    border-radius: 4px;
+    border-radius: 2px;
     position: relative;
     left: 50%;
     border: 1px solid gray;
@@ -80,12 +77,18 @@
     color: var(--color-mid);
 }
 
+.article-text-container h1::before, .article-text-container h2::before, .article-text-container h3::before, .article-text-container h4::before, .article-text-container h5::before, .article-text-container h6::before {
+    content: "# ";
+    opacity: 0.4;
+    cursor: pointer;
+}
+
 .article-text-container strong {
     padding: 2px 4px 0px 4px;
-    font-size: 16px;
+    font-size: 15px;
     color: var(--text-color-normal);
     font-weight: normal;
-    border-radius: 4px;
+    border-radius: 2px;
     position: relative;
     overflow: hidden;
 }
@@ -97,15 +100,15 @@
     top: 0px;
     width: 100%;
     height: 100%;
-    border-radius: 4px;
+    border-radius: 2px;
     background: var(--background-main);
     z-index: -1;
-    opacity: 0.6;
+    opacity: 0.4;
 }
 
 .article-text-container ul, ol{
     font-family: var(--text-normal);
-    font-size: 18px;
+    font-size: 14px;
     margin-top: 12px;
     padding: 0px 8px;
     word-wrap: break-word;
@@ -113,11 +116,12 @@
 
 .article-text-container code{    
     font-family: var(--text-code) !important;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 .article-text-container pre {
-    border-radius: 12px;
+    border-radius: 2px;
+    border-left: 2px solid #FFC107;
     overflow: hidden;
 }
 
@@ -135,16 +139,16 @@
 
 .article-text-container th {
     padding: 12px 12px 4px 12px;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .article-text-container td {
     padding: 4px 12px;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .article-text-container table {
-    border-radius: 1em;
+    border-radius: 2px;
     border-collapse: collapse;
     overflow: hidden;
     position: relative;
@@ -158,13 +162,24 @@
 .article-text-container table::before {
     content: "";
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.1;
     position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
     height: 100%;
     background: var(--background-main);
+}
+
+.article-text-container blockquote {
+    border-radius: 2px;
+    background: #ECEFF1;
+    padding: 12px 12px 2px 12px;
+    border-left: 2px solid #FFCA28;
+}
+
+.article-text-container blockquote p {
+    font-size: 14px !important;
 }
 
 @media only screen and (max-width : 992px) {
