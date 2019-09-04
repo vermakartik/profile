@@ -14,15 +14,15 @@ export class Login extends React.Component {
             <div className="container">
                 <div className="row mt-md-5 mt-3">
                     <div className="col-0 col-md-4"></div>
-                    <div className="col-12 col-md-4 rounded-lg pt-3 pb-3" style={{background: '#9b4dcb'}} >
-                        <div className="text-center" style={{fontFamily: '"Fredoka One", sans-serif', fontSize: '24px', letterSpacing: '2px', textTransform: 'uppercase', color: "white"}}>Login</div>
+                    <div className="col-12 col-md-4 rounded-lg pt-3 pb-3 border" >
+                        <div className="text-center" style={{fontFamily: '"Fredoka One", sans-serif', fontSize: '24px', letterSpacing: '2px', textTransform: 'uppercase'}}>Login</div>
                         <form>
                             <div className="form-group">
-                                <label className="text-light" style={{fontFamily: "ubuntu, sans-serif"}}>Username</label>
+                                <label className="text-dark" style={{fontFamily: "ubuntu, sans-serif"}}>Username</label>
                                 <input name="username" type="text" onChange={this.handleChange} value={this.state.username} className="form-control" id="username" />
                             </div>
                             <div className="form-group">
-                                <label className="text-light" style={{fontFamily: "ubuntu, sans-serif"}}>Password</label>
+                                <label className="text-dark" style={{fontFamily: "ubuntu, sans-serif"}}>Password</label>
                                 <input name="password" type="password" className="form-control" id="password" onChange={this.handleChange} value={this.state.password}/>
                             </div>
                             <div className="text-right">

@@ -116,7 +116,7 @@
 
 .article-text-container code{    
     font-family: var(--text-code) !important;
-    font-size: 1em;
+    font-size: 16px;
 }
 
 .article-text-container pre {
